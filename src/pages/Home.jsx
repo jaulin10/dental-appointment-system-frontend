@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-//import axios from "axios";
 import api from "../services/api";
 
 export default function Home() {
@@ -13,41 +12,31 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="home">
-      <header style={{ textAlign: "center", margin: "2rem" }}>
-        <img src="/logo.png" alt="Team Logo" style={{ width: 100 }} />
+    <div className="home-page">
+      <header className="home-header">
+        <img src="/logo.png" alt="Team Logo" className="logo" />
         <h1>Dental Appointment System</h1>
-        <h2>Our services</h2>
+        <h2>Our Services</h2>
       </header>
 
-      <section
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      <section className="services-container">
         {services.length > 0 ? (
           services.map((service) => (
-            <div
-              key={service._id}
-              style={{
-                border: "1px solid #ccc",
-                borderRadius: "8px",
-                padding: "1rem",
-                margin: "1rem",
-                width: "250px",
-                boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-              }}
-            >
+            <div className="service-card" key={service._id}>
               <h3>{service.name}</h3>
               <p>{service.description}</p>
-              <p>
-                <strong>Time:</strong> {service.duration} min
-              </p>
-              <p>
-                <strong>Amount:</strong> ${service.price}
-              </p>
+              <div className="service-info">
+                <span>
+                  <strong>Time:</strong> {service.duration} min
+                </span>
+                <span>
+                  <strong>Amount:</strong> ${service.price}
+                </span>
+              </div>
             </div>
           ))
         ) : (
-          <p>There are no services available.</p>
+          <p className="no-services">There are no services available.</p>
         )}
       </section>
     </div>
