@@ -26,7 +26,7 @@ export default function Appointments() {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Liste des rendez-vous</h2>
+      <h2>Appointment List</h2>
       <ul>
         {appointments.map((a) => (
           <li key={a._id}>
