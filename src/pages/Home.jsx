@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import Logo from "../assets/Logo.png";
 
 export default function Home() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
     api
-      .get("/services")
+      .get("/api/services")
       .then((res) => setServices(res.data))
       .catch((err) => console.error("Erreur chargement services:", err));
   }, []);
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <div className="home-page">
       <header className="home-header">
-        <img src="/logo.png" alt="Team Logo" className="logo" />
+        <img src={Logo} alt="Team Logo" className="logo" />
         <h1>Dental Appointment System</h1>
         <h2>Our Services</h2>
       </header>

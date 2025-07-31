@@ -1,3 +1,88 @@
+/* === Home Page Styling === */
+.home-page {
+  min-height: 100vh;
+  background: #f4f8fb;
+  padding: 2rem;
+}
+
+/* Header */
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-header .logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.home-header h1 {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+.home-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Services Grid */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Individual Service Card */
+.service-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Service Info */
+.service-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.service-info span strong {
+  color: #0077b6;
+}
+
+/* No services available */
+.no-services {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  grid-column: 1 / -1;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
